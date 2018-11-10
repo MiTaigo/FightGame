@@ -9,7 +9,7 @@ public class Character : MonoBehaviour {
 	float speed = 0;
 
 	[SerializeField]
-	float jump = 0;
+	float jump = 0; //fdsfdsfdsfdsfdsf Cod Normalen
 	float yVelocity = 0;
 
 	bool grountedOnce ;
