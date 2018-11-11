@@ -9,10 +9,10 @@ public class Character : MonoBehaviour {
 	float speed = 0;
 
 	[SerializeField]
-	float jump = 0; //fdsfdsfdsfdsfdsf Cod Normalen
+	float jump = 0; 
 	float yVelocity = 0;
 
-	bool grountedOnce ;
+	bool controlling = true ;
 
 	[SerializeField]
 	Vector3 move = new Vector3();
@@ -25,9 +25,13 @@ public class Character : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-		if (Input.GetKey(KeyCode.W) && charCont.isGrounded) 
+		if (charCont.isGrounded) 
 		{
-			yVelocity = jump;
+			yVelocity = 0;
+			if (Input.GetKey (KeyCode.W) && controlling) 
+			{
+				yVelocity = jump;
+			}
 		}
 		if (!charCont.isGrounded) {
 			yVelocity += Physics.gravity.y * Time.fixedDeltaTime;
